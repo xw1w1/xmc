@@ -1,0 +1,36 @@
+{
+  "xmc.product.name": "XMCLauncher",
+  "xmc.product.name.full": "XMC Minecraft Launcher",
+
+  "xmc.product.description": "XMC - Modrinth API (Labrinth) based launcher for any minecraft version. You can create custom modpacks, manage them, and delete as soon as you want.",
+
+  "xmc.locale.ru.displayName": "Russian",
+  "xmc.locale.en.displayName": "English",
+
+  "xmc.launcher.welcome-page.title.welcome": "Welcome!",
+
+  "xmc.labrinth.project.type.mod": "Mod",
+  "xmc.labrinth.project.type.modpack": "Modpack",
+  "xmc.labrinth.project.type.resourcepack": "Resourcepack",
+  "xmc.labrinth.project.type.shader": "Shader",
+
+  "xmc.labrinth.category.adventure": "Adventure",
+  "xmc.labrinth.category.cursed": "Cursed",
+  "xmc.labrinth.category.decoration": "Decoration",
+  "xmc.labrinth.category.economy": "Economy",
+  "xmc.labrinth.category.equipment": "Equipment",
+  "xmc.labrinth.category.food": "Food",
+  "xmc.labrinth.category.game_mechanics": "Game Mechanics",
+  "xmc.labrinth.category.library": "Library",
+  "xmc.labrinth.category.magic": "Magic",
+  "xmc.labrinth.category.management": "Management",
+  "xmc.labrinth.category.minigame": "Minigame",
+  "xmc.labrinth.category.mobs": "Mobs",
+  "xmc.labrinth.category.optimization": "Optimization",
+  "xmc.labrinth.category.social": "Social",
+  "xmc.labrinth.category.storage": "Storage",
+  "xmc.labrinth.category.technology": "Technology",
+  "xmc.labrinth.category.transportation": "Transportation",
+  "xmc.labrinth.category.utility": "Utility",
+  "xmc.labrinth.category.world_generation": "World Generation"
+}

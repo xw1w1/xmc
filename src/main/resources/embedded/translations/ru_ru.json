@@ -1,0 +1,36 @@
+{
+  "xmc.product.name": "XMCLauncher",
+  "xmc.product.name.full": "XMC Minecraft Launcher",
+
+  "xmc.product.description": "XMC - Майнкрафт лаунчер на основе API Modrinth (Labrinth), позволяющий легко создавать, удалять и работать со сборками майнкрафт модов, ресурспаков, текстурпаков и т.д",
+
+  "xmc.locale.ru.displayName": "Русский",
+  "xmc.locale.en.displayName": "Английский",
+
+  "xmc.launcher.welcome-page.title.welcome": "Добро пожаловать!",
+
+  "xmc.labrinth.project.type.mod": "Мод",
+  "xmc.labrinth.project.type.modpack": "Модпак",
+  "xmc.labrinth.project.type.resourcepack": "Ресурспак",
+  "xmc.labrinth.project.type.shader": "Шейдер",
+
+  "xmc.labrinth.category.adventure": "Приключение",
+  "xmc.labrinth.category.cursed": "Проклятый",
+  "xmc.labrinth.category.decoration": "Декорации",
+  "xmc.labrinth.category.economy": "Экономика",
+  "xmc.labrinth.category.equipment": "Экипировка",
+  "xmc.labrinth.category.food": "Еда",
+  "xmc.labrinth.category.game_mechanics": "Игровые Механики",
+  "xmc.labrinth.category.library": "Библиотека",
+  "xmc.labrinth.category.magic": "Магия",
+  "xmc.labrinth.category.management": "Менеджмент",
+  "xmc.labrinth.category.minigame": "Мини-игра",
+  "xmc.labrinth.category.mobs": "Мобы",
+  "xmc.labrinth.category.optimization": "Оптимизация",
+  "xmc.labrinth.category.social": "Взаимодействия",
+  "xmc.labrinth.category.storage": "Хранилище",
+  "xmc.labrinth.category.technology": "Технологии",
+  "xmc.labrinth.category.transportation": "Транспортировка",
+  "xmc.labrinth.category.utility": "Утилиты",
+  "xmc.labrinth.category.world_generation": "Генерация Мира"
+}
