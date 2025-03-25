@@ -11,7 +11,7 @@ object Preferences {
     private var platform = Platform.WINDOWS
 
     private var writableSettings: JsonObject = JsonObject()
-    private var currentlyUsedLanguage: ClientLanguage = ClientLanguage.RUSSIAN
+    private var currentlyUsedLanguage: ClientLanguage = ClientLanguage.forName("en_en")
 
     fun saveSettingsConfiguration() {}
     fun loadSettingsFromConfiguration() {}

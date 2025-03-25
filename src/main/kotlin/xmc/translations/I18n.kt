@@ -36,6 +36,11 @@ object I18n {
         languages.forEach { loadTranslation(it.value) }
     }
 
+    fun addLanguageRegistry(language: ClientLanguage, reg: JsonObject) {
+        dictionary[language] = reg
+        languages[language.code] = language
+    }
+
     fun onLanguageChange() { translatables.forEach(Translatable::translate) }
 
     fun translate(translationKey: String, language: ClientLanguage): String {

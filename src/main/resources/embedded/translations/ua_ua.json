@@ -1,0 +1,46 @@
+{
+  "xmc.product.name": "launcher",
+  "xmc.product.name.full": "XMC Launcher",
+
+  "xmc.product.description": "not used",
+
+  "xmc.locale.ru.displayName": "Російська",
+  "xmc.locale.en.displayName": "Англійська",
+  "xmc.locale.ua.displayName": "Український",
+
+  "xmc.launcher.subtitle": "xmc@",
+
+  "xmc.labrinth.project.type.mod": "Мод",
+  "xmc.labrinth.project.type.modpack": "Модпак",
+  "xmc.labrinth.project.type.resourcepack": "Ресурспак",
+  "xmc.labrinth.project.type.shader": "Шейдер",
+
+  "xmc.labrinth.category.adventure": "Пригода",
+  "xmc.labrinth.category.cursed": "Проклятий",
+  "xmc.labrinth.category.decoration": "Декорацій",
+  "xmc.labrinth.category.economy": "Экономика",
+  "xmc.labrinth.category.equipment": "Екіпірування",
+  "xmc.labrinth.category.food": "Їжа",
+  "xmc.labrinth.category.game_mechanics": "Ігрові Механіки",
+  "xmc.labrinth.category.library": "Бібліотека",
+  "xmc.labrinth.category.magic": "Магія",
+  "xmc.labrinth.category.management": "Менеджмент",
+  "xmc.labrinth.category.minigame": "Міні-гра",
+  "xmc.labrinth.category.mobs": "Моби",
+  "xmc.labrinth.category.optimization": "Оптимізація",
+  "xmc.labrinth.category.social": "Взаємодії",
+  "xmc.labrinth.category.storage": "Сховище",
+  "xmc.labrinth.category.technology": "Технологій",
+  "xmc.labrinth.category.transportation": "Транспортування",
+  "xmc.labrinth.category.utility": "Утиліти",
+  "xmc.labrinth.category.world_generation": "Генерация Світу",
+
+  "xmc.launcher.ui-page.home": "Головна",
+  "xmc.launcher.ui-page.settings": "Налаштування",
+  "xmc.launcher.ui-page.new-instance": "Створити збірку",
+
+  "xmc.launcher.button.home.tooltip": "Натисніть, щоб повернутися на головну",
+  "xmc.launcher.button.settings.tooltip": "Натисніть, щоб відкрити налаштування",
+  "xmc.launcher.button.new-instance.tooltip": "Натисніть, щоб створити нову збірку",
+  "xmc.launcher.button.global.tooltip": "Натисніть, щоб змінити мову клієнта"
+}

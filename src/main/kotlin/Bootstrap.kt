@@ -6,7 +6,7 @@ fun main(args: Array<String>) {
     println("Hello World!")
 
     val arguments = args.toList()
-    // throw this for now ^^
+    // ignore this for now ^^
 
     Preferences.loadPreferences()
 

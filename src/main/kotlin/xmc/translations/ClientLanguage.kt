@@ -7,7 +7,7 @@ import java.io.InputStreamReader
 /**
  * Simple wrapper for single registered language in languages.json
  */
-class ClientLanguage private constructor(code: String) {
+class ClientLanguage private constructor(val code: String) {
 
     constructor(code: String, filePath: String) : this(code) {
         this.translationFilePath = filePath
@@ -34,7 +34,10 @@ class ClientLanguage private constructor(code: String) {
         val ENGLISH = ClientLanguage("en_en")
 
         fun forName(code: String): ClientLanguage {
-            return ClientLanguage(code)
+            val language = ClientLanguage(code)
+            val translations = language.loadTranslationFile()
+            I18n.addLanguageRegistry(language, translations)
+            return language
         }
 
         fun custom(code: String, filePath: String): ClientLanguage {

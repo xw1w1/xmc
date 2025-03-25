@@ -44,10 +44,10 @@ class SideControlsBar(scene: Scene) {
     val bar = VBox()
 
     companion object {
-        private const val SIDEBAR_BUTTON_SCALE = 0.7
-        private const val BUTTON_HEIGHT_PREF_SIZE = 20.0
-        private const val BUTTON_SIDE_PREF_SIZE = 35.0
-        private const val FIT_ICON_SIZE = 20.0
+        const val SIDEBAR_BUTTON_SCALE = 0.7
+        const val BUTTON_HEIGHT_PREF_SIZE = 20.0
+        const val BUTTON_SIDE_PREF_SIZE = 35.0
+        const val FIT_ICON_SIZE = 20.0
     }
 
     init {
@@ -57,27 +57,28 @@ class SideControlsBar(scene: Scene) {
             spacing = 15.0
 
             scene.heightProperty().addListener {_, _, value ->
-                prefHeight = value.toDouble() - 60
-                layoutY = 60.0
+                prefHeight = value.toDouble() - 65
+                layoutY = 65.0
             }
 
             prefWidth = 75.0
 
-            background = Background(BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY))
+            //val color = Color.rgb(0, 191, 255, 0.9)
+            //background = Background(BackgroundFill(color, CornerRadii.EMPTY, Insets.EMPTY))
 
             children.addAll(
                 Button().apply {
-                    prefHeight = (xmc.launcher.ui.elements.SideControlsBar.Companion.BUTTON_SIDE_PREF_SIZE + xmc.launcher.ui.elements.SideControlsBar.Companion.BUTTON_HEIGHT_PREF_SIZE) * xmc.launcher.ui.elements.SideControlsBar.Companion.SIDEBAR_BUTTON_SCALE
-                    prefWidth = (xmc.launcher.ui.elements.SideControlsBar.Companion.BUTTON_SIDE_PREF_SIZE) * xmc.launcher.ui.elements.SideControlsBar.Companion.SIDEBAR_BUTTON_SCALE
+                    prefHeight = (BUTTON_SIDE_PREF_SIZE + BUTTON_HEIGHT_PREF_SIZE) * SIDEBAR_BUTTON_SCALE
+                    prefWidth = (BUTTON_SIDE_PREF_SIZE) * SIDEBAR_BUTTON_SCALE
                     textFill = LauncherApplication.DEFAULT_TEXT_COLOR
                     font = Font.font(LauncherApplication.DEFAULT_FONT_NAME, FontWeight.BOLD, 16.0)
                     graphic = ImageView(Image("embedded/icons/Home.png")).apply {
-                        fitWidth = xmc.launcher.ui.elements.SideControlsBar.Companion.FIT_ICON_SIZE
-                        fitHeight = xmc.launcher.ui.elements.SideControlsBar.Companion.FIT_ICON_SIZE
+                        fitWidth = FIT_ICON_SIZE
+                        fitHeight = FIT_ICON_SIZE
                         pickOnBoundsProperty().set(true)
                         preserveRatioProperty().set(true)
                     }
-                    tooltip = xmc.launcher.ui.elements.TranslatableTooltip("xmc.launcher.button.home.tooltip").tooltip().apply {
+                    tooltip = TranslatableTooltip("xmc.launcher.button.home.tooltip").tooltip().apply {
                         showDelay = Duration.millis(250.0)
                     }
                     setOnMouseClicked {
@@ -87,17 +88,17 @@ class SideControlsBar(scene: Scene) {
                 },
 
                 Button().apply {
-                    prefHeight = (xmc.launcher.ui.elements.SideControlsBar.Companion.BUTTON_SIDE_PREF_SIZE + xmc.launcher.ui.elements.SideControlsBar.Companion.BUTTON_HEIGHT_PREF_SIZE) * xmc.launcher.ui.elements.SideControlsBar.Companion.SIDEBAR_BUTTON_SCALE
-                    prefWidth = (xmc.launcher.ui.elements.SideControlsBar.Companion.BUTTON_SIDE_PREF_SIZE) * xmc.launcher.ui.elements.SideControlsBar.Companion.SIDEBAR_BUTTON_SCALE
+                    prefHeight = (BUTTON_SIDE_PREF_SIZE + BUTTON_HEIGHT_PREF_SIZE) * SIDEBAR_BUTTON_SCALE
+                    prefWidth = (BUTTON_SIDE_PREF_SIZE) * SIDEBAR_BUTTON_SCALE
                     textFill = LauncherApplication.DEFAULT_TEXT_COLOR
                     font = Font.font(LauncherApplication.DEFAULT_FONT_NAME, FontWeight.BOLD, 16.0)
                     graphic = ImageView(Image("embedded/icons/Settings.png")).apply {
-                        fitWidth = xmc.launcher.ui.elements.SideControlsBar.Companion.FIT_ICON_SIZE
-                        fitHeight = xmc.launcher.ui.elements.SideControlsBar.Companion.FIT_ICON_SIZE
+                        fitWidth = FIT_ICON_SIZE
+                        fitHeight = FIT_ICON_SIZE
                         pickOnBoundsProperty().set(true)
                         preserveRatioProperty().set(true)
                     }
-                    tooltip = xmc.launcher.ui.elements.TranslatableTooltip("xmc.launcher.button.settings.tooltip").tooltip().apply {
+                    tooltip = TranslatableTooltip("xmc.launcher.button.settings.tooltip").tooltip().apply {
                         showDelay = Duration.millis(250.0)
                     }
 
@@ -108,17 +109,17 @@ class SideControlsBar(scene: Scene) {
                 },
 
                 Button().apply {
-                    prefHeight = (xmc.launcher.ui.elements.SideControlsBar.Companion.BUTTON_SIDE_PREF_SIZE + xmc.launcher.ui.elements.SideControlsBar.Companion.BUTTON_HEIGHT_PREF_SIZE) * xmc.launcher.ui.elements.SideControlsBar.Companion.SIDEBAR_BUTTON_SCALE
-                    prefWidth = (xmc.launcher.ui.elements.SideControlsBar.Companion.BUTTON_SIDE_PREF_SIZE) * xmc.launcher.ui.elements.SideControlsBar.Companion.SIDEBAR_BUTTON_SCALE
+                    prefHeight = (BUTTON_SIDE_PREF_SIZE + BUTTON_HEIGHT_PREF_SIZE) * SIDEBAR_BUTTON_SCALE
+                    prefWidth = (BUTTON_SIDE_PREF_SIZE) * SIDEBAR_BUTTON_SCALE
                     textFill = LauncherApplication.DEFAULT_TEXT_COLOR
                     font = Font.font(LauncherApplication.DEFAULT_FONT_NAME, FontWeight.BOLD, 16.0)
                     graphic = ImageView(Image("embedded/icons/Plus.png")).apply {
-                        fitWidth = xmc.launcher.ui.elements.SideControlsBar.Companion.FIT_ICON_SIZE
-                        fitHeight = xmc.launcher.ui.elements.SideControlsBar.Companion.FIT_ICON_SIZE
+                        fitWidth = FIT_ICON_SIZE
+                        fitHeight = FIT_ICON_SIZE
                         pickOnBoundsProperty().set(true)
                         preserveRatioProperty().set(true)
                     }
-                    tooltip = xmc.launcher.ui.elements.TranslatableTooltip("xmc.launcher.button.new-instance.tooltip").tooltip().apply {
+                    tooltip = TranslatableTooltip("xmc.launcher.button.new-instance.tooltip").tooltip().apply {
                         showDelay = Duration.millis(250.0)
                     }
 

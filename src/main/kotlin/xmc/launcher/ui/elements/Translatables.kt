@@ -7,6 +7,8 @@ import xmc.launcher.backend.Preferences
 import xmc.translations.I18n
 import xmc.translations.Translatable
 
+// looks like a piece of s, but it actually works so IDK
+
 class TranslatableText(key: String) : Translatable(key) {
 
     fun text() = text

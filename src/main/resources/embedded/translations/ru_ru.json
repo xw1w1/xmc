@@ -1,13 +1,14 @@
 {
-  "xmc.product.name": "launcher",
-  "xmc.product.name.full": "XMC Minecraft Launcher",
+  "xmc.product.name": "лаунчер",
+  "xmc.product.name.full": "XMC Launcher",
 
-  "xmc.product.description": "XMC - Кастомизируемый майнкрафт лаунчер с открытым исходным кодом на основе Modrinth, позволяющий легко создавать, удалять и работать со сборками майнкрафт модов, ресурспаков и текстурпаков и т.д",
+  "xmc.product.description": "not used",
 
   "xmc.locale.ru.displayName": "Русский",
   "xmc.locale.en.displayName": "Английский",
+  "xmc.locale.ua.displayName": "Украинский",
 
-  "xmc.launcher.launcher.title": "xmc | в разработке",
+  "xmc.launcher.subtitle": "xmc@",
 
   "xmc.labrinth.project.type.mod": "Мод",
   "xmc.labrinth.project.type.modpack": "Модпак",
@@ -40,5 +41,6 @@
 
   "xmc.launcher.button.home.tooltip": "Нажмите, чтобы вернуться на главную",
   "xmc.launcher.button.settings.tooltip": "Нажмите, чтобы открыть настройки",
-  "xmc.launcher.button.new-instance.tooltip": "Нажмите, чтобы создать новую сборку"
+  "xmc.launcher.button.new-instance.tooltip": "Нажмите, чтобы создать новую сборку",
+  "xmc.launcher.button.global.tooltip": "Нажмите, чтобы изменить язык клиента"
 }

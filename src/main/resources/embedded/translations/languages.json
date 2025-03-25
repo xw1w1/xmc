@@ -1,4 +1,5 @@
 {
-  "ru_ru": "loading/translations/ru_ru.json",
-  "en_en": "loading/translations/ru_ru.json"
+  "ru_ru": "embedded/translations/ru_ru.json",
+  "en_en": "embedded/translations/ru_ru.json",
+  "ua_ua": "embedded/translations/ua_ua.json"
 }

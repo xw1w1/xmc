@@ -2,12 +2,13 @@
   "xmc.product.name": "launcher",
   "xmc.product.name.full": "XMC Minecraft Launcher",
 
-  "xmc.product.description": "XMC - Modrinth API (Labrinth) based launcher for any minecraft version. You can create custom modpacks, manage them, and delete as soon as you want.",
+  "xmc.product.description": "not used",
 
   "xmc.locale.ru.displayName": "Russian",
   "xmc.locale.en.displayName": "English",
+  "xmc.locale.ua.displayName": "Ukrainian",
 
-  "xmc.launcher.launcher.title": "xmc | under construction",
+  "xmc.launcher.subtitle": "xmc@",
 
   "xmc.labrinth.project.type.mod": "Mod",
   "xmc.labrinth.project.type.modpack": "Modpack",
@@ -40,5 +41,6 @@
 
   "xmc.launcher.button.home.tooltip": "Press to go Home",
   "xmc.launcher.button.settings.tooltip": "Press to open Preferences",
-  "xmc.launcher.button.new-instance.tooltip": "Press to create new instance"
+  "xmc.launcher.button.new-instance.tooltip": "Press to create new instance",
+  "xmc.launcher.button.global.tooltip": "Press to change client language"
 }
