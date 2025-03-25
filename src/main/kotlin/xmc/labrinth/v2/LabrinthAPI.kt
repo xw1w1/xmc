@@ -1,7 +1,6 @@
 package xmc.labrinth.v2
 
 import com.google.gson.JsonParser
-import xmc.labrinth.LabrinthAPIException
 import xmc.labrinth.Utils.connect
 import xmc.labrinth.Utils.sha512
 import xmc.labrinth.wrappers.Project

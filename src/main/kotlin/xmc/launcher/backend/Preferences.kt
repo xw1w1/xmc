@@ -11,7 +11,7 @@ object Preferences {
     private var platform = Platform.WINDOWS
 
     private var writableSettings: JsonObject = JsonObject()
-    private var currentlyUsedLanguage: ClientLanguage = ClientLanguage.ENGLISH
+    private var currentlyUsedLanguage: ClientLanguage = ClientLanguage.RUSSIAN
 
     fun saveSettingsConfiguration() {}
     fun loadSettingsFromConfiguration() {}
@@ -19,6 +19,12 @@ object Preferences {
     fun loadPreferences() {
         if (SystemUtils.IS_OS_WINDOWS) {
             this.platform = Platform.WINDOWS
+
+            System.loadLibrary("FluentLib")
+            System.setProperty("prism.lcdtext", "false")
+            System.setProperty("javafx.animation.fullspeed", "true")
+
+
         } else if (SystemUtils.IS_OS_LINUX) {
             this.platform = Platform.LINUX
         } else if (SystemUtils.IS_OS_MAC_OSX || SystemUtils.IS_OS_MAC) {
@@ -31,13 +37,7 @@ object Preferences {
     fun platform() = this.platform
 
     fun wasLoadedBefore(): Boolean {
-        return File(this.getConfigurationsFolder(), "preferences.ini").exists()
-    }
-
-    // Should be set to Program Files by installer or other in linux
-    // Expose for future work with configuration
-    fun getDataFolder(): File {
-        return File(Preferences::class.java.protectionDomain.codeSource.location.toURI())
+        return File(ResourceManager.getConfigurationsFolder(), "preferences.json").exists()
     }
 
     fun getCurrentLanguage(): ClientLanguage {
@@ -48,12 +48,11 @@ object Preferences {
         this.currentlyUsedLanguage = language
     }
 
-    // should be called first
     private fun loadConfiguration() {
         if (!wasLoadedBefore()) {
             this.loadDefaultConfiguration()
         } else {
-            val configsFolder = this.getConfigurationsFolder()
+            val configsFolder = ResourceManager.getConfigurationsFolder()
             val content = File(configsFolder, "preferences.json").inputStream()
             this.writableSettings = JsonParser.parseString(content.bufferedReader().readText()).asJsonObject
         }
@@ -63,10 +62,6 @@ object Preferences {
         val content = this.javaClass.classLoader.getResourceAsStream("defaultconfiguration.json")
             ?: throw RuntimeException("Default configuration is missing, please reinstall the program.")
         this.writableSettings = JsonParser.parseString(content.bufferedReader().readText()).asJsonObject
-    }
-
-    private fun getConfigurationsFolder(): File {
-        return File(this.getDataFolder(), "preferences")
     }
 
     enum class Platform {

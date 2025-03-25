@@ -1,6 +1,7 @@
 package xmc.launcher.ui.elements
 
 import javafx.scene.control.Label
+import javafx.scene.control.Tooltip
 import javafx.scene.text.Text
 import xmc.launcher.backend.Preferences
 import xmc.translations.I18n
@@ -32,6 +33,21 @@ class TranslatableLabel(key: String) : Translatable(key) {
     override fun translate(): String {
         val translated = I18n.translate(this.translatableKey(), Preferences.getCurrentLanguage())
         this.label.textProperty().value = translated
+        return translated
+    }
+}
+
+class TranslatableTooltip(key: String) : Translatable(key) {
+
+    fun tooltip() = tooltip
+
+    private val tooltip = Tooltip().apply {
+        this.text = I18n.translate(key, Preferences.getCurrentLanguage())
+    }
+
+    override fun translate(): String {
+        val translated = I18n.translate(this.translatableKey(), Preferences.getCurrentLanguage())
+        this.tooltip.textProperty().value = translated
         return translated
     }
 }

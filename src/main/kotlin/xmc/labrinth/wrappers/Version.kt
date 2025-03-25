@@ -9,11 +9,11 @@ import java.util.LinkedList
  * @see launcher.backend.labrinth.v2.LabrinthAPI
  */
 data class Version(                        // api response types:
-    val id: String,                        // string SHA512
+    val id: String,                        // string base62
     val name: String,                      // string
 
-    val projectID: String,                 // string SHA512
-    val authorID: String,                  // string SHA512
+    val projectID: String,                 // string base62
+    val authorID: String,                  // string base62
 
     val versionNumber: String,             // string
     val changelog: String,                 // string
@@ -104,6 +104,7 @@ data class Version(                        // api response types:
 
             return true
         }
+
         override fun hashCode(): Int {
             var result = versionID.hashCode()
             result = 31 * result + projectID.hashCode()

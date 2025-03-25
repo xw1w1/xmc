@@ -1,4 +1,4 @@
-package xmc.platform.win64.hwd
+package xmc.dwm
 
 import com.sun.jna.Library
 import com.sun.jna.Native
@@ -15,6 +15,6 @@ internal interface DwmSupport : Library {
     ): HRESULT?
 
     companion object {
-        val INSTANCE: xmc.platform.win64.hwd.DwmSupport = Native.load("dwmapi", xmc.platform.win64.hwd.DwmSupport::class.java)
+        val INSTANCE: DwmSupport = Native.load("dwmapi", DwmSupport::class.java)
     }
 }

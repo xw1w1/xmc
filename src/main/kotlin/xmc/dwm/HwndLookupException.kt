@@ -1,4 +1,4 @@
-package xmc.platform.win64.hwd
+package xmc.dwm
 
 /**
  * When [WindowHandle.tryFind] method fails,

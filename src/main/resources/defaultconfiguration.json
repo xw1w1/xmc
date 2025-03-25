@@ -1,5 +1,6 @@
 {
   "global-settings": {
-    "portable": false
+    "portable-mode": false,
+    "multiple-projects-request": true
   }
 }

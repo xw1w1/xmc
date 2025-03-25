@@ -1,4 +1,4 @@
-package xmc.platform.win64.hwd
+package xmc.dwm
 
 /**
 * Some DWM enum variants and constants.

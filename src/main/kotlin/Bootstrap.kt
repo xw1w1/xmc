@@ -1,14 +1,12 @@
-package xmc
-
+import x64.WindowsLauncherInitializer
 import xmc.launcher.backend.Preferences
 import xmc.translations.I18n
-import xmc.launcher.unix.LinuxLauncherInitializer
-import xmc.launcher.windows.WindowsLauncherInitializer
 
 fun main(args: Array<String>) {
     println("Hello World!")
 
     val arguments = args.toList()
+    // throw this for now ^^
 
     Preferences.loadPreferences()
 
@@ -17,6 +15,5 @@ fun main(args: Array<String>) {
 
     if (Preferences.platform() == Preferences.Platform.WINDOWS)
         WindowsLauncherInitializer().loadPlatformedInitializer(arguments)
-    else if (Preferences.platform() == Preferences.Platform.LINUX)
-        LinuxLauncherInitializer().loadPlatformedInitializer(arguments)
+    else if (Preferences.platform() == Preferences.Platform.LINUX) return
 }

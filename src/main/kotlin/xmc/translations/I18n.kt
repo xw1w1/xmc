@@ -7,7 +7,7 @@ import java.util.LinkedList
 
 object I18n {
 
-    private lateinit var languages: LinkedHashMap<String, ClientLanguage>
+    private val languages: LinkedHashMap<String, ClientLanguage> = LinkedHashMap()
     private val dictionary: LinkedHashMap<ClientLanguage, JsonObject> = LinkedHashMap()
 
     private val translatables: LinkedList<Translatable> = LinkedList()

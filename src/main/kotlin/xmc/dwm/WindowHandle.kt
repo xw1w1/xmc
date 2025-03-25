@@ -1,4 +1,4 @@
-package xmc.platform.win64.hwd
+package xmc.dwm
 
 import com.sun.jna.Platform
 import com.sun.jna.platform.win32.User32
@@ -90,7 +90,7 @@ class WindowHandle private constructor(private val hwnd: WinDef.HWND) {
      */
     fun dwmSetBooleanValue(attribute: DwmAttribute, value: Boolean): Boolean {
         return isOk(
-            xmc.platform.win64.hwd.DwmSupport.INSTANCE.DwmSetWindowAttribute(
+            DwmSupport.INSTANCE.DwmSetWindowAttribute(
                 hwnd,
                 attribute.value,
                 WinDef.BOOLByReference(WinDef.BOOL(value)),
@@ -108,7 +108,7 @@ class WindowHandle private constructor(private val hwnd: WinDef.HWND) {
      */
     fun dwmSetIntValue(attribute: DwmAttribute, value: Int): Boolean {
         return isOk(
-            xmc.platform.win64.hwd.DwmSupport.INSTANCE.DwmSetWindowAttribute(
+            DwmSupport.INSTANCE.DwmSetWindowAttribute(
                 hwnd,
                 attribute.value,
                 WinDef.DWORDByReference(WinDef.DWORD(value.toLong())),

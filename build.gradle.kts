@@ -1,3 +1,7 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     java
     application
@@ -6,13 +10,10 @@ plugins {
     id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
-group = "xmc"
-version = "1.0-SNAPSHOT"
-
 val javafxVersion = "17.0.11"
 
 application {
-    mainClass = "XMCBootstrapKt"
+    mainClass = "BootstrapKt"
     applicationDefaultJvmArgs = listOf("-Xmx512m")
 }
 
@@ -39,21 +40,30 @@ tasks {
     test {
         useJUnitPlatform()
     }
+}
 
-    val versionDetails: groovy.lang.Closure<com.palantir.gradle.gitversion.VersionDetails> by extra
-    val details = versionDetails()
+val targetJavaVersion = 21
+java {
+    val javaVersion = JavaVersion.toVersion(targetJavaVersion)
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+}
 
-    processResources {
-        filteringCharset = Charsets.UTF_8.name()
-        val properties = inputs.properties.map {
-            it.key to it.value
-        }.toMap(hashMapOf()).apply {
-            this["version"] = version
-            this["commitHash"] = details.gitHash
-        }
-        filesMatching("version_info.json") { expand(properties) }
+tasks.withType<JavaCompile>().configureEach {
+    options.encoding = Charsets.UTF_8.name()
+}
+
+tasks.withType<KotlinCompile>().configureEach {
+    compilerOptions {
+        jvmTarget = JvmTarget.fromTarget(targetJavaVersion.toString())
+        languageVersion = KotlinVersion.KOTLIN_2_0
+        apiVersion = KotlinVersion.KOTLIN_2_0
     }
 }
+
+
+group = "xmc"
+version = "1.0-SNAPSHOT"
 
 kotlin {
     jvmToolchain(21)

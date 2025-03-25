@@ -3,3 +3,5 @@ plugins {
 }
 
 rootProject.name = "xmc"
+include("xmc-platform")
+include("x64")

@@ -1,9 +1,10 @@
-package xmc.launcher.windows
+package x64
 
+import javafx.application.Application
 import xmc.LauncherInitializer
 
 class WindowsLauncherInitializer : LauncherInitializer() {
     override fun loadPlatformedInitializer(args: List<String>) {
-        TODO("Not yet implemented")
+        Application.launch(WindowsLauncherApplication::class.java)
     }
 }

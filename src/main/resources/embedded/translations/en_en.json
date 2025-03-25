@@ -1,5 +1,5 @@
 {
-  "xmc.product.name": "XMCLauncher",
+  "xmc.product.name": "launcher",
   "xmc.product.name.full": "XMC Minecraft Launcher",
 
   "xmc.product.description": "XMC - Modrinth API (Labrinth) based launcher for any minecraft version. You can create custom modpacks, manage them, and delete as soon as you want.",
@@ -7,7 +7,7 @@
   "xmc.locale.ru.displayName": "Russian",
   "xmc.locale.en.displayName": "English",
 
-  "xmc.launcher.welcome-page.title.welcome": "Welcome!",
+  "xmc.launcher.launcher.title": "xmc | under construction",
 
   "xmc.labrinth.project.type.mod": "Mod",
   "xmc.labrinth.project.type.modpack": "Modpack",
@@ -32,5 +32,13 @@
   "xmc.labrinth.category.technology": "Technology",
   "xmc.labrinth.category.transportation": "Transportation",
   "xmc.labrinth.category.utility": "Utility",
-  "xmc.labrinth.category.world_generation": "World Generation"
+  "xmc.labrinth.category.world_generation": "World Generation",
+
+  "xmc.launcher.ui-page.home": "Home",
+  "xmc.launcher.ui-page.settings": "Preferences",
+  "xmc.launcher.ui-page.new-instance": "Create new instance",
+
+  "xmc.launcher.button.home.tooltip": "Press to go Home",
+  "xmc.launcher.button.settings.tooltip": "Press to open Preferences",
+  "xmc.launcher.button.new-instance.tooltip": "Press to create new instance"
 }
