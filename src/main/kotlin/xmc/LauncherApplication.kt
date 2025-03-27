@@ -3,6 +3,7 @@ package xmc
 import javafx.application.Application
 import javafx.geometry.Insets
 import javafx.geometry.Pos
+import javafx.scene.Parent
 import javafx.scene.Scene
 import javafx.scene.control.Label
 import javafx.scene.effect.InnerShadow
@@ -29,10 +30,7 @@ abstract class LauncherApplication : Application() {
         fill = Color.BLACK
     }
 
-    val navigationBar: NavigationBar = NavigationBar(rootScene, TITLE, Image("favicon.png"))
-    val controlsBar: SideControlsBar = SideControlsBar(rootScene)
-
-    private val contentPane = HBox().apply {
+    var contentPane: Parent = HBox().apply {
         alignment = Pos.BOTTOM_CENTER
 
         val fillColorSub = Color.rgb(33, 32, 32, 0.5)
@@ -49,15 +47,21 @@ abstract class LauncherApplication : Application() {
         )
     }
 
+    val navigationBar: NavigationBar = NavigationBar(rootScene, TITLE_TEXT, Image("favicon.png"))
+    val controlsBar: SideControlsBar = SideControlsBar(rootScene)
+
     init {
-        root.children.addAll(navigationBar.header, controlsBar.bar,  contentPane)
-
-        AnchorPane.setTopAnchor(contentPane, 65.0)
-        AnchorPane.setLeftAnchor(contentPane, 75.0)
-        AnchorPane.setBottomAnchor(contentPane, 0.0)
-        AnchorPane.setRightAnchor(contentPane, 0.0)
-
+        root.children.addAll(navigationBar.header, controlsBar.bar)
         AnchorPane.setLeftAnchor(controlsBar.bar, 0.0)
+    }
+
+    fun setPage(parent: Parent) {
+        root.children.clear()
+        root.children.addAll(navigationBar.header, controlsBar.bar, parent)
+        AnchorPane.setTopAnchor(parent, 65.0)
+        AnchorPane.setLeftAnchor(parent, 75.0)
+        AnchorPane.setBottomAnchor(parent, 0.0)
+        AnchorPane.setRightAnchor(parent, 0.0)
     }
 
     abstract fun applyPlatformedWindowDecorations(stage: Stage)
@@ -68,7 +72,7 @@ abstract class LauncherApplication : Application() {
 
         const val DEFAULT_FONT_NAME = "Segoe UI"
 
-        val TITLE = TranslatableText("xmc.product.name").text().text
+        val TITLE_TEXT: String = TranslatableText("xmc.product.name").text().text
         val DEFAULT_TEXT_COLOR: Color = Color.rgb(199, 198, 198, 1.0)
     }
 }

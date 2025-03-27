@@ -2,7 +2,6 @@ package xmc.translations
 
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
-import com.sun.javafx.logging.Logger
 import java.io.InputStreamReader
 import java.util.LinkedList
 
@@ -13,7 +12,7 @@ object I18n {
 
     private val translatables: LinkedList<Translatable> = LinkedList()
 
-    fun loadLanguagesRegistry() {
+    fun loadTranslationFiles() {
         //Fallback & default languages
         languages["ru_ru"] = ClientLanguage.RUSSIAN
         languages["en_en"] = ClientLanguage.ENGLISH
@@ -32,13 +31,14 @@ object I18n {
         json.asMap().forEach {
             languages[it.key] = ClientLanguage.forName(it.key)
         }
+
         java.util.logging.Logger.getLogger("I18n").info("""
             Just loaded ${languages.size} languages!
             Map: $languages
         """.trimIndent())
     }
 
-    fun loadTranslationsDictionary() {
+    fun loadTranslations() {
         languages.forEach { loadTranslation(it.value) }
     }
 

@@ -7,9 +7,9 @@ import java.util.LinkedList
 
 object InstanceManager {
 
-    private val instances: List<Instance> = LinkedList()
+    private val instances: List<InstanceObject> = LinkedList()
 
     fun importInstanceData(file: File): JsonObject { return JsonObject()
     }
-    fun exportInstanceData(instance: Instance, path: Path): JsonObject { return JsonObject() }
+    fun exportInstanceData(instance: InstanceObject, path: Path): JsonObject { return JsonObject() }
 }

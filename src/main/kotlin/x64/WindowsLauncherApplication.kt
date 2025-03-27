@@ -5,6 +5,7 @@ import javafx.scene.image.Image
 import javafx.stage.Stage
 import javafx.stage.StageStyle
 import xmc.LauncherApplication
+import xmc.XMC
 import xmc.translations.ClientLanguage
 import xmc.translations.I18n
 
@@ -17,6 +18,7 @@ class WindowsLauncherApplication : LauncherApplication() {
     }
 
     override fun start(stage: Stage) {
+        XMC.setInstance(this)
         activeNavBar = this.navigationBar
         activeSideBar = this.controlsBar
 

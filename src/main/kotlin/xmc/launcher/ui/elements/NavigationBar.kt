@@ -28,10 +28,10 @@ import xmc.launcher.ui.elements.SideControlsBar.Companion.SIDEBAR_BUTTON_SCALE
  * Represents a top of default controls frame.
  * ```
  *  ╭───────────────────────────────────────────────────────────╮
- *  │  (←)  (→)     ( No instances running )        [ -  x ]    │
+ *  │  X MC    Home        ( No instances running )    [ -  x ] │
  *  │                                                           │
  * ```
- * This bar includes some basic navigation like windows default window buttons,
+ * This bar includes some basic navigation like window's default buttons,
  *
  * active instance control and back/forward buttons.
  */
@@ -42,7 +42,7 @@ class NavigationBar(parent: Scene) {
     var rootPageName = TranslatableLabel("xmc.launcher.ui-page.home").apply {
         label().apply {
             maxWidth = 275.0
-            font = Font.font("Unbounded Medium", FontWeight.EXTRA_BOLD, 16.0)
+            font = Font.font("Unbounded Medium", FontWeight.EXTRA_BOLD, 18.0)
             textFill = LauncherApplication.DEFAULT_TEXT_COLOR
         }
     }
@@ -59,25 +59,6 @@ class NavigationBar(parent: Scene) {
     private val icon = ImageView()
     private var title = TranslatableLabel("xmc.product.name").label()
 
-    private val languageSelectionButton = Button().apply {
-        prefHeight = (BUTTON_SIDE_PREF_SIZE + BUTTON_HEIGHT_PREF_SIZE) * SIDEBAR_BUTTON_SCALE
-        prefWidth = (BUTTON_SIDE_PREF_SIZE) * SIDEBAR_BUTTON_SCALE
-        textFill = LauncherApplication.DEFAULT_TEXT_COLOR
-        font = Font.font(LauncherApplication.DEFAULT_FONT_NAME, FontWeight.BOLD, 16.0)
-        graphic = ImageView(Image("embedded/icons/Global.png")).apply {
-            fitWidth = FIT_ICON_SIZE
-            fitHeight = FIT_ICON_SIZE
-            pickOnBoundsProperty().set(true)
-            preserveRatioProperty().set(true)
-        }
-        tooltip = TranslatableTooltip("xmc.launcher.button.global.tooltip").tooltip().apply {
-            showDelay = Duration.millis(250.0)
-        }
-        setOnMouseClicked {
-
-        }
-    }
-
     private var offsetX: Double = 0.0
     private var offsetY: Double = 0.0
 
@@ -91,13 +72,12 @@ class NavigationBar(parent: Scene) {
                 prefWidth = value.toDouble()
             }
 
-            //val color = Color.rgb(242, 29, 5, 0.9)
+            //val color = Color.rgb(242, 29, 5, 0.6)
             //background = Background(BackgroundFill(color, CornerRadii.EMPTY, Insets.EMPTY))
 
             children.addAll(
                 icon,
                 title,
-                //languageSelectionButton,
                 rootPageName.label()
             )
 

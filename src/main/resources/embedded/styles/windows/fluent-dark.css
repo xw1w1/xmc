@@ -114,21 +114,6 @@
     -fx-progress-color: -SystemFillColorSolidNeutralBrush;
 }
 
-.scroll-pane,.list-view,.table-view,.tree-table-view,.html-editor{
-    -fx-background-color:-ControlFillColorDisabledBrush;
-    -fx-background-radius: 15, 15, 15, 15;
-    -fx-alignment: center;
-}
-
-.scroll-pane>.viewport {
-    -fx-background-radius: 15, 15, 15, 15;
-    -fx-alignment: center;
-}
-
-.label:disabled,.radio-button:disabled,.slider:disabled,.scroll-bar:disabled,.scroll-pane:disabled,.progress-bar:disabled,.text-input:disabled,.list-view:disabled,.tree-view:disabled,.table-view:disabled,.tree-table-view:disabled,.titled-pane:disabled>.title,.spinner:disabled{
-    -fx-opacity:.4
-}
-
 .text-input:disabled>.scroll-pane{
     -fx-opacity:1
 }
@@ -687,36 +672,10 @@ TextFlow>.hyperlink:hover,TextFlow>.hyperlink:armed,TextFlow>.hyperlink:hover:ar
     -fx-cursor:default
 }
 
-.text-area>.scroll-pane{
-    -fx-background-color:-ControlFillColorDefaultBrush;
-    -fx-background-radius:4
-}
-
-.text-area>.scroll-pane>.scroll-bar:horizontal{
-    -fx-background-radius:0 0 0 2
-}
-
-.text-area>.scroll-pane>.scroll-bar:vertical{
-    -fx-background-radius:0 2 0 0
-}
-
-.text-area>.scroll-pane>.corner{
-    -fx-background-radius:0 0 2 0
-}
-
 .text-area .content{
     -fx-padding:.333333em .583em .333333em .583em;
     -fx-cursor:text;
     -fx-background-radius:4 0 0 4
-}
-
-.text-area:hover>.scroll-pane{
-    -fx-background-color:-ControlFillColorSecondaryBrush
-}
-
-.text-area:focused>.scroll-pane{
-    -fx-background-color:-ControlFillColorInputActiveBrush;
-    -fx-background-insets:0 0 1 0
 }
 
 Text{-fx-fill:-fx-text-base-color}

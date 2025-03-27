@@ -42,5 +42,10 @@
   "xmc.launcher.button.home.tooltip": "Нажмите, чтобы вернуться на главную",
   "xmc.launcher.button.settings.tooltip": "Нажмите, чтобы открыть настройки",
   "xmc.launcher.button.new-instance.tooltip": "Нажмите, чтобы создать новую сборку",
-  "xmc.launcher.button.global.tooltip": "Нажмите, чтобы изменить язык клиента"
+  "xmc.launcher.button.global.tooltip": "Нажмите, чтобы изменить язык клиента",
+
+  "xmc.launcher.ui-page.home.title": "Недавние:",
+  "xmc.launcher.ui-page.home.title.discover": "...Или присмотритесь к:",
+  "xmc.launcher.ui-page.settings.title": "Изменение Настроек",
+  "xmc.launcher.ui-page.new-instance.title": "Создание новой сборки"
 }

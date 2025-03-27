@@ -17,14 +17,12 @@ object Preferences {
     fun loadSettingsFromConfiguration() {}
 
     fun loadPreferences() {
-        if (SystemUtils.IS_OS_WINDOWS) {
+        if (SystemUtils.IS_OS_WINDOWS_10 || SystemUtils.IS_OS_WINDOWS_11) {
             this.platform = Platform.WINDOWS
 
             System.loadLibrary("FluentLib")
             System.setProperty("prism.lcdtext", "false")
             System.setProperty("javafx.animation.fullspeed", "true")
-
-
         } else if (SystemUtils.IS_OS_LINUX) {
             this.platform = Platform.LINUX
         } else if (SystemUtils.IS_OS_MAC_OSX || SystemUtils.IS_OS_MAC) {

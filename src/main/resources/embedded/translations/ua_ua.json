@@ -42,5 +42,10 @@
   "xmc.launcher.button.home.tooltip": "Натисніть, щоб повернутися на головну",
   "xmc.launcher.button.settings.tooltip": "Натисніть, щоб відкрити налаштування",
   "xmc.launcher.button.new-instance.tooltip": "Натисніть, щоб створити нову збірку",
-  "xmc.launcher.button.global.tooltip": "Натисніть, щоб змінити мову клієнта"
+  "xmc.launcher.button.global.tooltip": "Натисніть, щоб змінити мову клієнта",
+
+  "xmc.launcher.ui-page.home.title": "Недавні:",
+  "xmc.launcher.ui-page.home.title.discover": "...Або придивіться до:",
+  "xmc.launcher.ui-page.settings.title": "Зміна Налаштувань",
+  "xmc.launcher.ui-page.new-instance.title": "Створення нового збiрки"
 }

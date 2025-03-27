@@ -42,5 +42,10 @@
   "xmc.launcher.button.home.tooltip": "Press to go Home",
   "xmc.launcher.button.settings.tooltip": "Press to open Preferences",
   "xmc.launcher.button.new-instance.tooltip": "Press to create new instance",
-  "xmc.launcher.button.global.tooltip": "Press to change client language"
+  "xmc.launcher.button.global.tooltip": "Press to change client language",
+
+  "xmc.launcher.ui-page.home.title": "Recently added:",
+  "xmc.launcher.ui-page.home.title.discover": "...Or look at these:",
+  "xmc.launcher.ui-page.settings.title": "Edit Preferences",
+  "xmc.launcher.ui-page.new-instance.title": "Create a new instance"
 }
