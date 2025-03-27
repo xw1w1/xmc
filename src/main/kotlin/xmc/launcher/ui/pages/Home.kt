@@ -10,38 +10,32 @@ import javafx.scene.paint.Color
 import javafx.scene.shape.Rectangle
 import javafx.scene.text.Font
 import javafx.scene.text.FontWeight
-import javafx.stage.Stage
+import org.w3c.dom.css.Rect
 import xmc.XMC
 import xmc.launcher.backend.ResourceManager
+import xmc.launcher.backend.instance.InstanceManager
+import xmc.launcher.backend.instance.InstanceObject
 import xmc.launcher.ui.elements.TranslatableText
+import java.awt.GraphicsDevice
+import java.awt.Toolkit
+import java.util.LinkedList
+import java.util.Objects
 import kotlin.random.Random
 
 class Home : UIPage() {
 
-    private val tiles = mutableListOf<Pane>()
-    private val wideTiles = mutableListOf<Region>()
+    private val tiles = mutableListOf<Region>()
+    private val instances = InstanceManager.randomInstancesList(10)
 
-    val root = VBox().apply {
+    private val root = VBox().apply {
         spacing = 20.0
         padding = Insets(PADDING)
         val fillColorSub = Color.rgb(33, 32, 32, 0.5)
         effect = InnerShadow(10.0, Color.rgb(33, 33, 33, 0.8))
         background = Background(BackgroundFill(fillColorSub, CornerRadii(15.0, 0.0, 0.0, 0.0, false), Insets.EMPTY))
-        widthProperty().addListener { _, _, value ->
-            val buttonAdditional: Double
-            if (value.toDouble() <= minWidth) {
-                buttonAdditional = PLACEHOLDER_MIN_WIDTH
-            } else if (value.toDouble() >= maxWidth) {
-                buttonAdditional = PLACEHOLDER_MAX_WIDTH
-            } else {
-                val ratio = (value.toDouble() - minWidth) / (maxWidth - minWidth)
-                buttonAdditional = width + ratio * (maxWidth - minWidth)
-            }
-
-            tiles.forEach {
-                //(it.graphic as ImageView).prefWidth(buttonAdditional)
-                it.prefWidth = buttonAdditional
-            }
+        widthProperty().addListener {_, _, _ ->
+            this.children.clear()
+            contentPane()
         }
     }
 
@@ -54,50 +48,66 @@ class Home : UIPage() {
             font = Font.font("Unbound Medium", FontWeight.BOLD, 18.0)
         }
 
-        val tileContainer = FlowPane().apply {
-            hgap = SPACING
-            vgap = SPACING
-        }
-
-        repeat(6) {
-            val tile = createCard()
-            tileContainer.children.add(tile)
-            this.tiles.add(tile)
+        val tileContainersHolder = VBox().apply {
+            val rows = breakInstancesToRows(instances)
+            children.addAll(rows)
+            tiles.addAll(rows)
         }
 
         root.children.addAll(
             recentlyAdded,
-            tileContainer,
+            tileContainersHolder,
         )
 
         return root
     }
 
-    private fun createCard(): Pane {
-        return Pane().also { button ->
-            val cards = ResourceManager.getBackgroundCards()
-            button.background = Background(
-                BackgroundFill(Color.POWDERBLUE, CornerRadii.EMPTY, Insets.EMPTY)
-            )
-            val image = cards[Random.nextInt(cards.size)].apply {
-                clip = Rectangle(PLACEHOLDER_MAX_WIDTH - 10, PLACEHOLDER_HEIGHT).apply {
-                    layoutX += 5
-                    arcWidth = 15.0
-                    arcHeight = 15.0
-                    fitHeight = PLACEHOLDER_HEIGHT
-                    fitWidth = PLACEHOLDER_MAX_WIDTH
+    private fun breakInstancesToRows(instances: List<InstanceObject>): List<HBox> {
+        val rows = LinkedList<HBox>()
+        var elementsPerRow = 3
+        val screenWidth = Toolkit.getDefaultToolkit().screenSize.width
+        val paneWidth = root.widthProperty().get()
+        if (paneWidth > (screenWidth * 0.9)) {
+            elementsPerRow = 5
+        } else if (paneWidth > (screenWidth * 0.8)) {
+            elementsPerRow = 4
+        }
+
+        instances.forEach { instance ->
+            val row = rows.firstOrNull { it.children.size < elementsPerRow } ?: HBox().also { rows.add(it) }
+            row.children.add(this.createCard(instance))
+        }
+        return rows
+    }
+
+    private fun createCard(obj: InstanceObject): Button {
+        return Button().apply {
+            val card = obj.card
+            var buttonWidth = 0.0
+            widthProperty().addListener { _, _, value ->
+                buttonWidth = value.toDouble()
+            }
+            graphic = card.apply {
+                fitWidth = PLACEHOLDER_MAX_WIDTH
+                fitHeight = PLACEHOLDER_HEIGHT
+                clip = Rectangle(buttonWidth, PLACEHOLDER_HEIGHT).apply {
+                    arcWidth = 25.0
+                    arcHeight = 25.0
                 }
             }
-            button.maxHeight = PLACEHOLDER_HEIGHT
-            button.minWidth = PLACEHOLDER_MIN_WIDTH
-            button.maxWidth = PLACEHOLDER_MAX_WIDTH
+
+            maxWidth = PLACEHOLDER_MIN_WIDTH
+            minWidth = PLACEHOLDER_MIN_WIDTH
+            maxHeight = PLACEHOLDER_HEIGHT
+
+            prefWidth = PLACEHOLDER_MAX_WIDTH
         }
     }
 
     private companion object {
         const val PLACEHOLDER_HEIGHT = 100.0
         const val PLACEHOLDER_MIN_WIDTH = 250.0
-        const val PLACEHOLDER_MAX_WIDTH = 450.0
+        const val PLACEHOLDER_MAX_WIDTH = 350.0
         const val SPACING = 15.0
         const val PADDING = 20.0
     }
