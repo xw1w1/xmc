@@ -3,6 +3,7 @@ package xmc.launcher.ui.pages
 import javafx.geometry.Insets
 import javafx.scene.Parent
 import javafx.scene.control.Button
+import javafx.scene.control.ScrollPane
 import javafx.scene.effect.InnerShadow
 import javafx.scene.image.ImageView
 import javafx.scene.layout.*
@@ -10,17 +11,12 @@ import javafx.scene.paint.Color
 import javafx.scene.shape.Rectangle
 import javafx.scene.text.Font
 import javafx.scene.text.FontWeight
-import org.w3c.dom.css.Rect
 import xmc.XMC
-import xmc.launcher.backend.ResourceManager
 import xmc.launcher.backend.instance.InstanceManager
 import xmc.launcher.backend.instance.InstanceObject
 import xmc.launcher.ui.elements.TranslatableText
-import java.awt.GraphicsDevice
 import java.awt.Toolkit
 import java.util.LinkedList
-import java.util.Objects
-import kotlin.random.Random
 
 class Home : UIPage() {
 
@@ -33,10 +29,6 @@ class Home : UIPage() {
         val fillColorSub = Color.rgb(33, 32, 32, 0.5)
         effect = InnerShadow(10.0, Color.rgb(33, 33, 33, 0.8))
         background = Background(BackgroundFill(fillColorSub, CornerRadii(15.0, 0.0, 0.0, 0.0, false), Insets.EMPTY))
-        widthProperty().addListener {_, _, _ ->
-            this.children.clear()
-            contentPane()
-        }
     }
 
     override fun open() {
@@ -48,10 +40,15 @@ class Home : UIPage() {
             font = Font.font("Unbound Medium", FontWeight.BOLD, 18.0)
         }
 
-        val tileContainersHolder = VBox().apply {
-            val rows = breakInstancesToRows(instances)
-            children.addAll(rows)
-            tiles.addAll(rows)
+        val tileContainersHolder = FlowPane().apply {
+            hgap = SPACING
+            vgap = SPACING
+        }
+
+        instances.forEach {
+            val card = this.createCard(it)
+            tiles.add(card)
+            tileContainersHolder.children.add(card)
         }
 
         root.children.addAll(
@@ -62,33 +59,13 @@ class Home : UIPage() {
         return root
     }
 
-    private fun breakInstancesToRows(instances: List<InstanceObject>): List<HBox> {
-        val rows = LinkedList<HBox>()
-        var elementsPerRow = 3
-        val screenWidth = Toolkit.getDefaultToolkit().screenSize.width
-        val paneWidth = root.widthProperty().get()
-        if (paneWidth > (screenWidth * 0.9)) {
-            elementsPerRow = 5
-        } else if (paneWidth > (screenWidth * 0.8)) {
-            elementsPerRow = 4
-        }
-
-        instances.forEach { instance ->
-            val row = rows.firstOrNull { it.children.size < elementsPerRow } ?: HBox().also { rows.add(it) }
-            row.children.add(this.createCard(instance))
-        }
-        return rows
-    }
-
     private fun createCard(obj: InstanceObject): Button {
         return Button().apply {
             val card = obj.card
-            var buttonWidth = 0.0
-            widthProperty().addListener { _, _, value ->
-                buttonWidth = value.toDouble()
-            }
+            val buttonWidth = widthProperty().get()
+
             graphic = card.apply {
-                fitWidth = PLACEHOLDER_MAX_WIDTH
+                fitWidth = buttonWidth
                 fitHeight = PLACEHOLDER_HEIGHT
                 clip = Rectangle(buttonWidth, PLACEHOLDER_HEIGHT).apply {
                     arcWidth = 25.0
