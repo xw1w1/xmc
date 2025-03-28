@@ -1,6 +1,6 @@
 package xmc.launcher.backend.instance
 
-import xmc.labrinth.SoftProjectReference
+import labrinth.SoftProjectReference
 import xmc.launcher.backend.ResourceManager
 import java.util.LinkedList
 

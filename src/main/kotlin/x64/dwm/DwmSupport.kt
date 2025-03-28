@@ -1,4 +1,4 @@
-package xmc.dwm
+package x64.dwm
 
 import com.sun.jna.Library
 import com.sun.jna.Native

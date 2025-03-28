@@ -1,4 +1,4 @@
-package xmc.labrinth.wrappers
+package labrinth.wrappers
 
 import java.util.*
 

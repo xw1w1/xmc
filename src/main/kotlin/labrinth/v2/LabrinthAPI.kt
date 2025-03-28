@@ -1,10 +1,10 @@
-package xmc.labrinth.v2
+package labrinth.v2
 
 import com.google.gson.JsonParser
-import xmc.labrinth.Utils.connect
-import xmc.labrinth.Utils.sha512
-import xmc.labrinth.wrappers.Project
-import xmc.labrinth.wrappers.Version
+import labrinth.Utils.connect
+import labrinth.Utils.sha512
+import labrinth.wrappers.Project
+import labrinth.wrappers.Version
 import java.io.File
 import java.util.logging.Logger
 

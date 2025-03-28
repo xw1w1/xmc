@@ -1,4 +1,4 @@
-package xmc.labrinth.wrappers
+package labrinth.wrappers
 
 /**
  * All project categories available on [https://modrinth.com/](https://modrinth.com/)

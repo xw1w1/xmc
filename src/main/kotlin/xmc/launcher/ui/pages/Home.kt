@@ -3,9 +3,7 @@ package xmc.launcher.ui.pages
 import javafx.geometry.Insets
 import javafx.scene.Parent
 import javafx.scene.control.Button
-import javafx.scene.control.ScrollPane
 import javafx.scene.effect.InnerShadow
-import javafx.scene.image.ImageView
 import javafx.scene.layout.*
 import javafx.scene.paint.Color
 import javafx.scene.shape.Rectangle
@@ -15,21 +13,11 @@ import xmc.XMC
 import xmc.launcher.backend.instance.InstanceManager
 import xmc.launcher.backend.instance.InstanceObject
 import xmc.launcher.ui.elements.TranslatableText
-import java.awt.Toolkit
-import java.util.LinkedList
 
 class Home : UIPage() {
 
     private val tiles = mutableListOf<Region>()
     private val instances = InstanceManager.randomInstancesList(10)
-
-    private val root = VBox().apply {
-        spacing = 20.0
-        padding = Insets(PADDING)
-        val fillColorSub = Color.rgb(33, 32, 32, 0.5)
-        effect = InnerShadow(10.0, Color.rgb(33, 33, 33, 0.8))
-        background = Background(BackgroundFill(fillColorSub, CornerRadii(15.0, 0.0, 0.0, 0.0, false), Insets.EMPTY))
-    }
 
     override fun open() {
         XMC.getInstance().setPage(this.contentPane())
@@ -37,7 +25,7 @@ class Home : UIPage() {
 
     override fun contentPane(): Parent {
         val recentlyAdded = TranslatableText("xmc.launcher.ui-page.home.title").text().apply {
-            font = Font.font("Unbound Medium", FontWeight.BOLD, 18.0)
+            font = Font.font("Unbound Medium", FontWeight.BOLD, 20.0)
         }
 
         val tileContainersHolder = FlowPane().apply {

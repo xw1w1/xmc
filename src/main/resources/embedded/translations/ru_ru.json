@@ -47,5 +47,8 @@
   "xmc.launcher.ui-page.home.title": "Недавние:",
   "xmc.launcher.ui-page.home.title.discover": "...Или присмотритесь к:",
   "xmc.launcher.ui-page.settings.title": "Изменение Настроек",
-  "xmc.launcher.ui-page.new-instance.title": "Создание новой сборки"
+  "xmc.launcher.ui-page.new-instance.title": "Создание новой сборки",
+
+  "xmc.launcher.ui-page.new-instance.element.instance-name": "Название",
+  "xmc.launcher.ui-page.new-instance.element.instance-name.tooltip": "Укажите название для своей сборки"
 }

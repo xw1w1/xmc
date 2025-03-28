@@ -1,4 +1,4 @@
-package xmc.labrinth
+package labrinth
 
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
@@ -8,7 +8,7 @@ import java.net.URI
 import java.security.MessageDigest
 import kotlin.collections.Map.Entry
 
-import xmc.labrinth.v2.LabrinthAPI.DEBUG_LOGGER
+import labrinth.v2.LabrinthAPI.DEBUG_LOGGER
 
 object Utils {
 

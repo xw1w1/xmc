@@ -1,4 +1,4 @@
-package xmc.labrinth.v2
+package labrinth.v2
 
 /**
  * Represents an error due to bad response code from [LabrinthAPIProvider]

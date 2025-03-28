@@ -1,4 +1,4 @@
-package xmc.labrinth.wrappers
+package labrinth.wrappers
 
 import com.google.gson.JsonObject
 import java.net.URI

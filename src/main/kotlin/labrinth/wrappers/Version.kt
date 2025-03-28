@@ -1,7 +1,7 @@
-package xmc.labrinth.wrappers
+package labrinth.wrappers
 
 import com.google.gson.JsonObject
-import xmc.labrinth.Utils
+import labrinth.Utils
 import java.util.LinkedList
 
 /**

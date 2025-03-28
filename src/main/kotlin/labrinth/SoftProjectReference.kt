@@ -1,8 +1,8 @@
-package xmc.labrinth
+package labrinth
 
-import xmc.labrinth.v2.LabrinthAPI
-import xmc.labrinth.wrappers.Project
-import xmc.labrinth.wrappers.Version
+import labrinth.v2.LabrinthAPI
+import labrinth.wrappers.Project
+import labrinth.wrappers.Version
 import java.io.File
 
 /**

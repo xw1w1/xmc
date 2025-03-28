@@ -1,4 +1,4 @@
-package xmc.dwm
+package x64.dwm
 
 import com.sun.jna.Platform
 import com.sun.jna.platform.win32.User32

@@ -1,14 +1,10 @@
 {
-  "xmc.product.name": "launcher",
-  "xmc.product.name.full": "XMC Minecraft Launcher",
-
-  "xmc.product.description": "not used",
+  "xmc.launcher": "launcher",
+  "xmc.launcher.full-name": "XMC Minecraft Launcher",
 
   "xmc.locale.ru.displayName": "Russian",
   "xmc.locale.en.displayName": "English",
   "xmc.locale.ua.displayName": "Ukrainian",
-
-  "xmc.launcher.subtitle": "xmc@",
 
   "xmc.labrinth.project.type.mod": "Mod",
   "xmc.labrinth.project.type.modpack": "Modpack",
@@ -35,17 +31,16 @@
   "xmc.labrinth.category.utility": "Utility",
   "xmc.labrinth.category.world_generation": "World Generation",
 
-  "xmc.launcher.ui-page.home": "Home",
-  "xmc.launcher.ui-page.settings": "Preferences",
-  "xmc.launcher.ui-page.new-instance": "Create new instance",
-
   "xmc.launcher.button.home.tooltip": "Press to go Home",
   "xmc.launcher.button.settings.tooltip": "Press to open Preferences",
   "xmc.launcher.button.new-instance.tooltip": "Press to create new instance",
   "xmc.launcher.button.global.tooltip": "Press to change client language",
 
-  "xmc.launcher.ui-page.home.title": "Recently added:",
-  "xmc.launcher.ui-page.home.title.discover": "...Or look at these:",
-  "xmc.launcher.ui-page.settings.title": "Edit Preferences",
-  "xmc.launcher.ui-page.new-instance.title": "Create a new instance"
+  "xmc.launcher.page.home": "Home",
+  "xmc.launcher.page.preferences": "Preferences",
+  "xmc.launcher.page.new-instance": "Create new instance",
+
+  "xmc.launcher.page.home.title": "Recently added:",
+  "xmc.launcher.page.settings.title": "Edit Preferences",
+  "xmc.launcher.page.new-instance.title": "Create a new instance"
 }

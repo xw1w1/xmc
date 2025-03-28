@@ -1,9 +1,9 @@
 package earth.groundctrl.fluent.lib
 
 import javafx.stage.Stage
-import xmc.dwm.DwmAttribute
-import xmc.dwm.HwndLookupException
-import xmc.dwm.WindowHandle
+import x64.dwm.DwmAttribute
+import x64.dwm.HwndLookupException
+import x64.dwm.WindowHandle
 import java.io.BufferedReader
 import java.io.InputStreamReader
 

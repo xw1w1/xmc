@@ -1,4 +1,4 @@
-package xmc.dwm
+package x64.dwm
 
 /**
 * Some DWM enum variants and constants.
