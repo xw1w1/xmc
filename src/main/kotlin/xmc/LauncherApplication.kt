@@ -13,10 +13,10 @@ import javafx.scene.paint.Color
 import javafx.scene.text.Font
 import javafx.scene.text.FontWeight
 import javafx.stage.Stage
-import xmc.launcher.backend.Preferences
-import xmc.launcher.ui.elements.NavigationBar
-import xmc.launcher.ui.elements.SideControlsBar
-import xmc.launcher.ui.elements.TranslatableText
+import backend.Preferences
+import old.ui.elements.NavigationBar
+import old.ui.elements.SideControlsBar
+import frontend.element.TranslatableText
 
 abstract class LauncherApplication : Application() {
 

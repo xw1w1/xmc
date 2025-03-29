@@ -13,7 +13,7 @@ plugins {
 val javafxVersion = "17.0.11"
 
 application {
-    mainClass = "BootstrapKt"
+    mainClass = "XMCKt"
     applicationDefaultJvmArgs = listOf("-Xmx512m")
 }
 

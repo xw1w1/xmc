@@ -1,15 +1,16 @@
 package earth.groundctrl.fluent.lib
 
 import javafx.stage.Stage
-import x64.dwm.DwmAttribute
-import x64.dwm.HwndLookupException
-import x64.dwm.WindowHandle
+import earth.groundctrl.fluent.lib.dwm.DwmAttribute
+import earth.groundctrl.fluent.lib.dwm.HwndLookupException
+import earth.groundctrl.fluent.lib.dwm.WindowHandle
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
 /**
- * FluentLib library endpoints.
+ * FluentLib library.
  * Thanks to Erocia for library and theme especially:
+ *
  * [https://github.com/Eroica/javafx-fluent-theme](https://github.com/Eroica/javafx-fluent-theme)
  */
 object Windows {
